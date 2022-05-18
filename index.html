@@ -8,19 +8,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.2.0/modern-normalize.min.css"
         integrity="sha512-sqIVMkf5f8XGYI/UZYGs7wODxlUeoj9JknataPfUwtvrSKWMHrMXGZ7Evb6nabFYJQG15vFFyALe6r0nWCD1Ug=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
     <header class="header">
+        <div class="container header__container">
+            <a href="" class="logo">
+                <svg width="30" height="30">
+                    <use href="./images/sprite.svg#icon-logo"></use>
+                </svg>
+            </a>
 
+            <a class="link tel" href="tel:+79184123443">
+                <svg class="phone-icon" width="21" height="21">
+                    <use href="./images/sprite.svg#icon-phone"></use>
+                </svg>
+                +7 918 412-34-43</a>
+
+            <button class="mobile-menu-btn" type="button" data-menu-button>
+                <svg width="28" height="35">
+                    <use class="mobile-menu-burger" width="28" height="40" href="./images/sprite.svg#icon-menu-burger"></use>
+                    <use class="mobile-menu-cross" width="28" height="40" href="./images/sprite.svg#icon-menu-cross"></use>
+                </svg>
+            </button>
+        </div>
     </header>
     
     <main class="main">
+        <div class="hero">
+            <div class="container">
+                <h1 class="hero__title">Ladesign</h1>
+                <p class="hero__text">Дизайн-проекты жилых и коммерческих помещений. Малая архитектура</p>
+            </div>
+        </div>
 
     </main>
 
     <footer class="footer">
 
     </footer>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 </html>

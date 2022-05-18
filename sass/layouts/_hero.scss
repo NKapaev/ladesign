@@ -1,0 +1,40 @@
+.hero{
+    padding-top: 164px;
+    padding-bottom: 164px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/320/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 105px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/768/hero-bg.jpg);
+    }
+    @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/1024/hero-bg.jpg);
+    }
+    @media screen and (min-width: 1920px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/1920/hero-bg.jpg);
+    }
+}
+
+.hero__title{
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 70px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--white);
+}
+
+.hero__text{
+    font-family: 'Roboto Condensed';
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+color: #FFFFFF;
+}

@@ -1,0 +1,98 @@
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 70px;
+    border-bottom: 0.5px solid #878787;
+
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+
+    @media screen and (min-width: 768px) {
+        min-height: 105px;
+    }
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+
+    fill: var(--white);
+    transition: color  var(--cubic), var(--duration);
+
+    &:hover, &:focus{
+        fill: blue
+    }
+}
+
+.tel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Roboto Condensed';
+    font-weight: 500;
+    line-height: 19px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    color: var(--white);
+
+    &:hover, &:focus{
+        color: blue;
+        .phone-icon{
+            stroke: blue;
+        }
+        
+    }
+
+}
+.phone-icon{
+    margin-right: 10px;
+    stroke: var(--white);
+
+    transition: stroke var(--cubic), var(--duration);
+}
+.mobile-menu-btn{
+    border: none;
+    width: 40px;
+    height: 40px;
+
+    &:hover, &:focus{
+        .mobile-menu-burger{
+        fill: blue;
+        }
+        .mobile-menu-cross{
+        fill: blue;
+        }
+    }
+
+
+    &.is-open{
+        .mobile-menu-burger{
+            opacity: 0;
+        }
+        .mobile-menu-cross{
+            opacity: 1;
+        }
+    }
+}
+.mobile-menu-burger{
+    fill: var(--white);
+    opacity: 1;
+
+    transition: opacity 250ms, fill var(--cubic), var(--duration);
+}
+
+.mobile-menu-cross{
+    fill: var(--white);
+    opacity: 0;
+
+    transition: opacity 250ms, fill var(--cubic), var(--duration);
+}
