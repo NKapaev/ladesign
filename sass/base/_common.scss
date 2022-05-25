@@ -18,15 +18,11 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  /* or 150% */
   
   color: var(--main-text-color);
 }
 
 // Базовые настройки модального окна
-body.modal-open {
-  overflow: hidden;
-}
 address {
   font-style: normal;
 }
@@ -70,5 +66,9 @@ button {
   border: 0 !important;
   height: 1px !important;
   width: 1px !important;
+  overflow: hidden;
+}
+
+.hidden{
   overflow: hidden;
 }

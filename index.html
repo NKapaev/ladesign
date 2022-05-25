@@ -21,7 +21,11 @@
                     <use href="./images/sprite.svg#icon-logo"></use>
                 </svg>
             </a>
-
+            <ul class="list menu" data-menu>
+                <li class="menu__item"><a class="link menu__link" href="">Портфолио</a></li>
+                <li class="menu__item"><a class="link menu__link" href="">услуги и цены</a></li>
+                <li class="menu__item"><a class="link menu__link" href="">контакты</a></li>
+            </ul>
             <a class="link tel" href="tel:+79184123443">
                 <svg class="phone-icon" width="21" height="21">
                     <use href="./images/sprite.svg#icon-phone"></use>
@@ -34,22 +38,106 @@
                     <use class="mobile-menu-cross" width="28" height="40" href="./images/sprite.svg#icon-menu-cross"></use>
                 </svg>
             </button>
+
         </div>
     </header>
     
     <main class="main">
         <div class="hero">
-            <div class="container">
+            <div class="container hero__container">
                 <h1 class="hero__title">Ladesign</h1>
                 <p class="hero__text">Дизайн-проекты жилых и коммерческих помещений. Малая архитектура</p>
             </div>
         </div>
-
+    <section class="benefits">
+        <div class="container benefits__container">
+            <h2 class="benefits__title">Наша команда дает уверенность</h2>
+            <div class="benefits__content-container">
+                <div class="benefits__list-container">
+                    <p class="benefits__label">Дизайн-проект от студии LA Design не только совершенен по дизайну, но и реализуем</p>
+                    <ul class="list benefits__list">
+                        <li class="benefits__item">
+                            <div class="benefits__item-title-container">
+                                <h3 class="benefits__item-title">Каждый проект уникален</h3>
+                                <button class="benefits__item-button">
+                                    <svg width="15" height="15">
+                                        <use href="./images/sprite.svg#icon-project-arrow"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                                
+                            <p class="benefits__item-description">Дизайнеры и архитекторы студии не работают по шаблону, учитывают все пожелания и не копируют работы из чужих портфолио</p>
+                        </li>
+                        <li class="benefits__item">
+                            <div class="benefits__item-title-container">
+                                <h3 class="benefits__item-title">Полное сопровождение</h3>
+                                <button class="benefits__item-button">
+                                    <svg width="15" height="15">
+                                        <use class="benefits__button-icon" href="./images/sprite.svg#icon-project-arrow"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                           
+                            <p class="benefits__item-description">Клиент может заказать услугу по авторскому надзору и вообще не приезжать на объект. Мы будем контролировать и корректировать ход выполнения ремонтных работ согласно дизайн-проекту</p>
+                        </li>
+                        <li class="benefits__item">
+                            <div class="benefits__item-title-container">
+                                <h3 class="benefits__item-title">Согласование перепланировки</h3>
+                            <button class="benefits__item-button">
+                                <svg width="15" height="15">
+                                    <use href="./images/sprite.svg#icon-project-arrow"></use>
+                                </svg>
+                            </button>
+                            </div>
+                            
+                            <p class="benefits__item-description">Поможем согласовать любые планировочные решения, которые не противоречат закону. Возьмем на себя все бумажные вопросы, чтобы освободить ваше время</p>
+                        </li>
+                        <li class="benefits__item">
+                            <div class="benefits__item-title-container">
+                                <h3 class="benefits__item-title">Техническая документация</h3>
+                                <button class="benefits__item-button">
+                                    <svg width="15" height="15">
+                                        <use href="./images/sprite.svg#icon-project-arrow"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <p class="benefits__item-description">Готовим полный пакет документов, который гарантирует ответственный подход к работе и высокое качество реализованного дизайн-проекта</p>
+                        </li>
+                        <li class="benefits__item">
+                            <div class="benefits__item-title-container">
+                                <h3 class="benefits__item-title">Строгая политика конфиденциальности</h3>
+                            <button class="benefits__item-button">
+                                <svg width="15" height="15">
+                                    <use href="./images/sprite.svg#icon-project-arrow"></use>
+                                </svg>
+                            </button>
+                            </div>
+                            
+                            <p class="benefits__item-description">Обеспечиваем защиту персональных данных заказчиков и не раскрываем их третьим лицам.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits__image-container">
+                    <picture>
+                        <source srcset="./images/1920/benefits/benefits-image.jpg 1x, ./images/1920/benefits/benefits-image2x.jpg 2x," media="(min-width: 1920px)">
+                        <source srcset="./images/1024/benefits/benefits-image.jpg 1x, ./images/1024/benefits/benefits-image2x.jpg 2x," media="(min-width: 1024px)">
+                        <source srcset="./images/768/benefits/benefits-image.jpg 1x, ./images/768/benefits/benefits-image2x.jpg 2x," media="(min-width: 768px)">
+                        <source srcset="./images/320/benefits/benefits-image.jpg 1x, ./images/320/benefits/benefits-image2x.jpg 2x," media="(max-width: 767px)">
+                        <img class="benefits__image" src="./images/768/benefits/benefits-image.jpg" alt="" width="678">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+        
     </main>
 
     <footer class="footer">
 
     </footer>
-    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/header.js" type="module"></script>
+    <script src="./js/mobile-menu.js" type="module"></script>
+    <script src="./js/benefits.js" type="module"></script>
 </body>
 </html>

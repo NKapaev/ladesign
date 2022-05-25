@@ -9,19 +9,19 @@
   }
 
   @media screen and (min-width: 768px) {
-    width: 768px;
+    min-width: 768px;
     padding-left: 45px;
     padding-right: 45px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 1024px;
+    min-width: 1024px;
     padding-left: 47px;
     padding-right: 47px;
   }
 
   @media screen and (min-width: 1920px) {
-    width: 1920px;
+    min-width: 1920px;
     padding-left: 360px;
     padding-right: 360px;
   }

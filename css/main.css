@@ -1,7 +1,8 @@
 :root {
   --white: #FFFFFF;
   --buttons: #393246;
-  --main--text-color: #777777;
+  --line: #D5D5D5;
+  --main-text-color: #777777;
   --duration: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -26,12 +27,7 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  /* or 150% */
   color: var(--main-text-color);
-}
-
-body.modal-open {
-  overflow: hidden;
 }
 
 address {
@@ -78,6 +74,10 @@ button {
   overflow: hidden;
 }
 
+.hidden {
+  overflow: hidden;
+}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -93,7 +93,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    min-width: 768px;
     padding-left: 45px;
     padding-right: 45px;
   }
@@ -101,7 +101,7 @@ button {
 
 @media screen and (min-width: 1024px) {
   .container {
-    width: 1024px;
+    min-width: 1024px;
     padding-left: 47px;
     padding-right: 47px;
   }
@@ -109,13 +109,14 @@ button {
 
 @media screen and (min-width: 1920px) {
   .container {
-    width: 1920px;
+    min-width: 1920px;
     padding-left: 360px;
     padding-right: 360px;
   }
 }
 
 .header {
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
@@ -124,6 +125,57 @@ button {
   border-bottom: 0.5px solid #878787;
   display: flex;
   background-color: rgba(255, 255, 255, 0);
+  transition: background-color var(--cubic), var(--duration);
+}
+
+.header.scrolled {
+  background-color: var(--white);
+}
+
+.header.scrolled .logo {
+  fill: var(--buttons);
+}
+
+@media screen and (min-width: 1024px) {
+  .header.scrolled .menu__item {
+    color: var(--buttons);
+  }
+}
+
+.header.scrolled .tel {
+  color: var(--buttons);
+}
+
+.header.scrolled .tel:hover, .header.scrolled .tel:focus {
+  color: blue;
+}
+
+.header.scrolled .phone-icon {
+  stroke: var(--buttons);
+}
+
+.header.scrolled .mobile-menu-burger {
+  fill: var(--buttons);
+}
+
+.header.is-open {
+  background-color: #000;
+}
+
+.header.is-open .logo {
+  fill: var(--white);
+}
+
+.header.is-open .tel {
+  color: var(--white);
+}
+
+.header.is-open .phone-icon {
+  stroke: var(--white);
+}
+
+.header.is-open .mobile-menu-cross {
+  fill: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -133,6 +185,7 @@ button {
 }
 
 .header__container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,11 +194,74 @@ button {
 .logo {
   display: flex;
   fill: var(--white);
-  transition: color var(--cubic), var(--duration);
+  transition: all var(--cubic) var(--duration);
 }
 
 .logo:hover, .logo:focus {
   fill: blue;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: #000;
+  opacity: 0;
+  transition: opacity var(--cubic), var(--duration);
+}
+
+.menu.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    top: 105px;
+    padding-bottom: 105px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    height: 100%;
+    opacity: 1;
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .menu__item:not(:last-child) {
+    margin-bottom: 19px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .menu__item:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .tel {
@@ -155,7 +271,6 @@ button {
   font-family: 'Roboto Condensed';
   font-weight: 500;
   line-height: 19px;
-  /* identical to box height */
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--white);
@@ -167,6 +282,13 @@ button {
 
 .tel:hover .phone-icon, .tel:focus .phone-icon {
   stroke: blue;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .tel {
+    margin-left: auto;
+    margin-right: 80px;
+  }
 }
 
 .phone-icon {
@@ -195,6 +317,12 @@ button {
 
 .mobile-menu-btn.is-open .mobile-menu-cross {
   opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-menu-btn {
+    display: none;
+  }
 }
 
 .mobile-menu-burger {
@@ -237,6 +365,25 @@ button {
   }
 }
 
+.hero__container {
+  padding-top: 164px;
+  padding-bottom: 164px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__container {
+    padding-top: 186px;
+    padding-bottom: 186px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .hero__container {
+    padding-top: 270px;
+    padding-bottom: 302px;
+  }
+}
+
 .hero__title {
   font-family: 'Roboto Condensed';
   font-weight: 300;
@@ -248,11 +395,200 @@ button {
   color: var(--white);
 }
 
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 140px;
+    line-height: 164px;
+  }
+}
+
 .hero__text {
   font-family: 'Roboto Condensed';
   text-align: center;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__text {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+.benefits__container {
+  padding-top: 70px;
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__container {
+    padding-top: 150px;
+  }
+}
+
+.benefits__title {
+  margin-bottom: 23px;
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__title {
+    margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__title {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__content-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .benefits__list-container {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__list-container {
+    width: calc(50%);
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .benefits__list-container {
+    width: calc(50%);
+    margin-right: 102px;
+  }
+}
+
+.benefits__label {
+  margin-bottom: 39px;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__label {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__label {
+    margin-bottom: 50px;
+  }
+}
+
+.benefits__list {
+  width: 100%;
+}
+
+.benefits__item {
+  cursor: pointer;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.benefits__item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.benefits__item-title-container {
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benefits__item-title {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.benefits__item-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  fill: #777;
+  transition: transform var(--cubic) var(--duration);
+}
+
+.benefits__item-button.open {
+  transform: rotate(90deg);
+}
+
+.benefits__item-button:hover, .benefits__item-button:focus {
+  fill: red;
+}
+
+.benefits__button-icon {
+  pointer-events: none;
+}
+
+.benefits__item-description {
+  pointer-events: none;
+  display: none;
+}
+
+.benefits__item-description.open {
+  display: block;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1023px) {
+  .benefits__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .benefits__image {
+    max-width: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__image {
+    max-width: 678px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .benefits__image {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .benefits__image {
+    max-width: 585px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
