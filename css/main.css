@@ -427,7 +427,7 @@ button {
   }
 }
 
-.benefits__title {
+.section__title {
   margin-bottom: 23px;
   font-family: 'Roboto Condensed';
   font-weight: 300;
@@ -438,7 +438,7 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  .benefits__title {
+  .section__title {
     margin-bottom: 30px;
     font-size: 40px;
     line-height: 47px;
@@ -446,7 +446,7 @@ button {
 }
 
 @media screen and (min-width: 1024px) {
-  .benefits__title {
+  .section__title {
     margin-bottom: 50px;
   }
 }
@@ -590,5 +590,13 @@ button {
   .benefits__image {
     max-width: 585px;
   }
+}
+
+.portfolio__container {
+  padding-top: 70px;
+}
+
+.portfolio__title {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
